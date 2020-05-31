@@ -2,12 +2,13 @@ var express = require("express");
 var cors = require("cors");
 var mongoose = require("mongoose");
 const bodyParser = require("body-parser");
-
+//setup server express
 var app = express();
 app.use(cors());
 app.use(bodyParser.urlencoded({ extended: true }));
 app.use(bodyParser.json());
 
+//connect mongodb cloud
 var mongo_uri = "mongodb+srv://user1:ionay999@cluster0-ridux.mongodb.net/test?retryWrites=true&w=majority";
 mongoose.Promise = global.Promise;
 mongoose.connect(mongo_uri, { useNewUrlParser: true }).then(

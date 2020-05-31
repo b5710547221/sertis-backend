@@ -27,7 +27,7 @@ router.post("/add", (req, res) => {
   });
 });
 
-// PUT (update/warat/<id>)
+// PUT (update/(author)/<id>)
 router.put("/edit/:_author/:_id", (req, res) => {
   Card.findByIdAndUpdate(req.params._author,req.params._id, req.body, (err, data) => {
     if (Card.author == req.params._author ){
@@ -37,7 +37,7 @@ router.put("/edit/:_author/:_id", (req, res) => {
   });
 });
 
-//DELETE (delete/warat/<id>)
+//DELETE (delete/(author)/<id>)
 router.delete("/delete/:_author/:_id", (req, res) => {
   Card.findByIdAndDelete(req.params._author,req.params._id, (err, data) => {
     if (Card.author == req.params._author ){
